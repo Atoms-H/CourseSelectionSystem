@@ -66,9 +66,9 @@ public class LoginServlet extends HttpServlet {
                         context.setAttribute("myself",student);
                         request.setAttribute("myself",student);
 
-                        // 跳转学生主页面
-//                        RequestDispatcher rd = request.getRequestDispatcher("/jsp/student/stu_homepage.jsp");
-//                        rd.forward(request, response);
+                        //跳转学生主页面
+                        RequestDispatcher rd = request.getRequestDispatcher("/jsp/student/stu_homepage.jsp");
+                        rd.forward(request, response);
                     } else {
                         note = "账号不存在或密码错误，请重新登录";
                     }

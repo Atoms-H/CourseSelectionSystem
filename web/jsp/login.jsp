@@ -4,10 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>个性化智能选课系统</title>
-    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
     <link href="${pageContext.request.contextPath}/bootstrap-5.1.3-dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="${pageContext.request.contextPath}/css/loginpage.css" rel="stylesheet"/>
-    <script type="text/javascript" src="../bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
 </head>
 <body class="text-center">
 <main class="form-signin">
