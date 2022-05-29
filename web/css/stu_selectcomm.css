@@ -1,0 +1,29 @@
+h3 {
+    padding-top: 90px;
+    text-align: center;
+}
+
+h5 {
+    padding: 30px 130px 50px 130px;
+    text-align: center;
+}
+
+input.button-a{
+    border: 2px solid black;
+    border-radius: 8px;
+    height: 220px;
+    width: 250px;
+    text-align: center;
+    margin-left: 200px;
+    background: white;
+}
+
+input.button-b{
+    border: 2px solid black;
+    border-radius: 8px;
+    height: 220px;
+    width: 250px;
+    text-align: center;
+    margin-left: 20px;
+    background: white;
+}

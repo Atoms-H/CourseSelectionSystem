@@ -1,12 +1,15 @@
 package dao;
 
 import bean.Administrator;
+import bean.Question;
 import bean.Student;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 实现Dao接口，实现数据库操作方法
@@ -58,5 +61,29 @@ public class UserDaoImpl implements UserDao{
         }
         System.out.println("学生账号不存在或密码错误");
         return null;
+    }
+
+    //检索智能教务沟通数据库
+    @Override
+    public List<Question> selectAll() throws DaoException, SQLException {
+        List<Question> list = new ArrayList<Question>();
+        String sql = "select * from question";
+        try (
+                Connection conn = getConnection();
+                PreparedStatement stmt = conn.prepareStatement(sql)) {
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    int id = rs.getInt(1);
+                    String content = rs.getString(2);
+                    String answer = rs.getString(3);
+                    Question question = new Question(id, content, answer);
+                    //System.out.println("1");
+                    list.add(question);
+                }
+            } catch (SQLException se) {
+                System.out.println("se" + se);
+            }
+            return list;
+        }
     }
 }
