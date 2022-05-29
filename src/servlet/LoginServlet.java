@@ -15,14 +15,14 @@ import java.util.ArrayList;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+        //doPost(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         ServletContext context = this.getServletContext();
-
+        HttpSession session=request.getSession();
         String identify = request.getParameter("identify");
         String id_str = request.getParameter("id");
         String password = request.getParameter("password");
@@ -67,7 +67,12 @@ public class LoginServlet extends HttpServlet {
                         request.setAttribute("myself",student);
 
                         //跳转学生主页面
-                        RequestDispatcher rd = request.getRequestDispatcher("/jsp/student/stu_homepage.jsp");
+                        //RequestDispatcher rd = request.getRequestDispatcher("/jsp/student/stu_homepage.jsp");
+
+                        //test:跳转选课页面
+                        session.setAttribute("student",student);
+                        System.out.println("identification confirm!");
+                        RequestDispatcher rd=request.getRequestDispatcher("/stu_selectCourse_rec.jsp");
                         rd.forward(request, response);
                     } else {
                         note = "账号不存在或密码错误，请重新登录";
@@ -79,8 +84,8 @@ public class LoginServlet extends HttpServlet {
             }
         }
 
-        request.setAttribute("note",note);
-        RequestDispatcher rd = request.getRequestDispatcher("/jsp/login.jsp");
-        rd.forward(request, response);
+        //request.setAttribute("note",note);
+        //RequestDispatcher rd = request.getRequestDispatcher("/jsp/login.jsp");
+        //rd.forward(request, response);
     }
 }

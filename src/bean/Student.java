@@ -7,14 +7,16 @@ public class Student {
     private String institute; //学院
     private String major; //专业
     private String grade; //年级（大一/大二/大三/大四）
+    private String semester;  //在读学期
 
-    public Student(int id, String password, String name, String institute, String major, String grade) {
+    public Student(int id, String password, String name, String institute, String major, String grade, String semester) {
         this.id = id;
         this.password = password;
         this.name = name;
         this.institute = institute;
         this.major = major;
         this.grade = grade;
+        this.semester=semester;
     }
 
     public int getId() {
@@ -75,5 +77,13 @@ public class Student {
                 ", major='" + major + '\'' +
                 ", grade='" + grade + '\'' +
                 '}';
+    }
+
+    public String getSemester() {
+        return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
     }
 }

@@ -48,7 +48,8 @@ public class UserDaoImpl implements UserDao{
                 if(rs.next()) {
                     System.out.println("学生账号密码正确");
                     return new Student(rs.getInt("id"),rs.getString("password"),rs.getString("name"),
-                            rs.getString("institute"), rs.getString("major"),rs.getString("grade"));
+                            rs.getString("institute"), rs.getString("major"),rs.getString("grade"),
+                            rs.getString("semester"));
 
                 }
             }
