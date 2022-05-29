@@ -1,0 +1,28 @@
+h5{
+    padding: 50px 0px 30px 40px;
+}
+
+.container{
+    display: table;
+}
+
+.item{
+    display: table-cell;
+    width: 50%;
+    height: 160px;
+    vertical-align: middle;
+}
+
+input.button-back{
+    margin-left: 360px;
+    height: auto;
+    width: auto;
+    color: white;
+    background: #6c757d;
+}
+
+.item2{
+    display: table-cell;
+    height: auto;
+    vertical-align: middle;
+}
